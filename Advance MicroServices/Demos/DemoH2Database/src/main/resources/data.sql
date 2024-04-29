@@ -1,1 +1,0 @@
-INSERT into Employee values(1001,'Rahul',999.11);
