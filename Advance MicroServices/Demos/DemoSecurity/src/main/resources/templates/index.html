@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<nav class="nav nav-pills nav-fill">
+  <a class="nav-item nav-link " href="/add">Add Employee</a>
+  <a class="nav-item nav-link" href="/">Show Employee</a>
+  <a class="nav-item nav-link" href="/update">Update Employee</a>
+  </nav>
+  
+  
+  
+<table border="1">
+<tr>
+<th>Employee Id</th>
+<th>Employee Name</th>
+<th>Employee Salary</th>
+<th>Action</th> 
+</tr>
+<tr th:each="emp:${myList}">
+<td th:text="${emp.empId}"></td>
+<td th:text="${emp.empName}"></td>
+<td th:text="${emp.empSalary}"></td>
+<td><a th:href="@{'/update?id='+ ${emp.empId}}">UPDATE</a></td>
+
+</tr>
+</table>
+</body>
+</html>

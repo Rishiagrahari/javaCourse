@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<nav class="nav nav-pills nav-fill">
+  <a class="nav-item nav-link " href="/add">Add Employee</a>
+  <a class="nav-item nav-link" href="/">Show Employee</a>
+  <a class="nav-item nav-link" href="/update">Update Employee</a>
+  </nav>
+Add Employee
+
+<form th:action="@{/addemp}" th:object="${myemp}" method="post">
+<table>
+<tr>
+<td>Employee Id</td>
+<td><input type="text" th:field="*{empId}" /></td>
+<td th:if="${#fields.hasErrors('empId')}" th:errors="*{empId}">Id Error</td>
+</tr>
+
+<tr>
+<td>Employee Name</td>
+<td><input type="text" th:field="*{empName}" /></td>
+<td th:if="${#fields.hasErrors('empName')}" th:errors="*{empName}">Name Error</td>
+</tr>
+<tr>
+<td>Employee Salary</td>
+<td><input type="text" th:field="*{empSalary}" /></td>
+<td th:if="${#fields.hasErrors('empSalary')}" th:errors="*{empSalary}">Salary Error</td>
+</tr>
+
+<tr>
+<td><input type="submit" value="Add Employee" /></td>
+</tr>
+</table>
+</form>
+
+</body>
+</html>
